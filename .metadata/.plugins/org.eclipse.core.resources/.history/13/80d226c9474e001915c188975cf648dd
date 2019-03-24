@@ -1,0 +1,27 @@
+package Assignment1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class Customer {
+	private String nume;
+	private int id;
+	private String recomandation;
+	List <Book> books=new ArrayList<Book>();
+	public Customer(String nume, int id, String recomandation){
+		this.nume = nume;
+		this.id = id;
+		this.recomandation = recomandation;
+	}
+	public String getNume(){
+		return nume;
+	}
+	public int getId(){
+		return id;
+	}
+	public String getRecomandation(){
+		return recomandation;
+	}
+}
