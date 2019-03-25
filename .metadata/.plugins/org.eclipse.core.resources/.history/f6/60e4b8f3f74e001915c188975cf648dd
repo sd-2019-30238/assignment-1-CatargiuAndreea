@@ -1,0 +1,56 @@
+package Assignment1;
+import java.awt.EventQueue;
+import javax.swing.*;
+import java.awt.*;
+
+public class GUICustomer {
+	private JFrame frame;
+	private JTextField textField;
+	private JPanel panel;
+	private JButton CreateButton;
+	
+	public GUICustomer(){
+		//frame = new JFrame("USER");
+		
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame.setSize(500,160);
+		//panel = new JPanel();
+		//CreateButton = new JButton("Create Account");
+		
+		//panel.add(CreateButton);
+		//frame.setContentPane(panel);
+		//frame.setVisible(true);
+		// Creeaza un nou panou de nivel sus
+		JPanel pHoriz = new JPanel();
+		pHoriz.setLayout(new BoxLayout(pHoriz,
+		BoxLayout.X_AXIS));
+		//add( pHoriz );
+		// Creeaza doua panouri subordonate
+		JPanel pVertL = new JPanel();
+		JPanel pVertR = new JPanel();
+		pVertL.setLayout(new BoxLayout(pVertL,
+		BoxLayout.Y_AXIS));
+		pVertR.setLayout(new BoxLayout(pVertR,
+		BoxLayout.Y_AXIS));
+		// Adauga la pHoriz cu spatiu orizontal
+		// intre panouri
+		pHoriz.add( pVertL );
+		pHoriz.add( Box.createRigidArea(new
+		Dimension(20,0)) );
+		pHoriz.add( pVertR );
+		// Creeaza campul grade Celsius
+		JLabel l1 = new JLabel("deg C:", JLabel.RIGHT);
+		pVertL.add( l1 );
+		JTextField t1 = new JTextField("0.0",15);
+		t1.addActionListener( cHnd );
+		pVertR.add( t1 );
+		// Creeaza campul grade Fahrenheit
+		JLabel l2 = new JLabel("deg F:", JLabel.RIGHT);
+		pVertL.add( l2 );
+		JTextField t2 = new JTextField("32.0",15);
+		t2.addActionListener( fHnd );
+		pVertR.add( t2 );
+
+	}
+	
+}

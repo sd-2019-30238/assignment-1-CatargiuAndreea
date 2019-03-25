@@ -3,10 +3,12 @@ package Assignment1;
 public class Staff {
 	private int idStaff;
 	private String name;
+	private String password;
 	
-	public Staff(int idStaff, String name){
+	public Staff(int idStaff, String name, String password){
 		this.idStaff = idStaff;
 		this.name = name;
+		this.password = password;
 	}
 	
 	public int getId(){
@@ -15,5 +17,9 @@ public class Staff {
 	
 	public String getName(){
 		return name;
+	}
+	
+	public String getPassword(){
+		return password;
 	}
 }

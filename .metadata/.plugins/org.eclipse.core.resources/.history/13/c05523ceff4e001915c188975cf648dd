@@ -1,0 +1,37 @@
+package Assignment1;
+import java.awt.EventQueue;
+import javax.swing.*;
+import java.awt.*;
+
+
+public class GUICreateAcc {
+	private JFrame frame;
+	private JTextField user;
+	private JTextField pass;
+	private JButton CreateButton;
+	private JLabel userL;
+	private JLabel password;
+	
+	public GUICreateAcc(){
+		frame = new JFrame("USER");
+		
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(500,300);
+		frame.setLayout(null);
+	
+		CreateButton = new JButton("Create Account");
+		userL = new JLabel("USER: ", JLabel.RIGHT);
+		password = new JLabel("PASSWORD: ", JLabel.RIGHT);
+		user = new JTextField("Your username");
+		pass = new JTextField("Your password");
+		
+		frame.add(userL);
+		frame.add(CreateButton);
+		frame.add(password);
+		frame.add(user);
+		frame.add(pass);
+		frame.setVisible(true);
+		
+	
+}

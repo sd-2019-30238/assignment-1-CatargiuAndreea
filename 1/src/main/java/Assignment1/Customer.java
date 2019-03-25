@@ -8,14 +8,15 @@ import java.util.List;
 public class Customer {
 	private String nume;
 	private int id;
-	
-	private String payment;
+	private int payment;
+	private String password;
 	List <Book> books=new ArrayList<Book>();
-	public Customer(String nume, int id, String payment){
+	
+	public Customer(String nume, int id, int payment, String password){
 		this.nume = nume;
 		this.id = id;
-		
 		this.payment = payment;
+		this.password = password;
 	}
 	public String getNume(){
 		return nume;
@@ -24,7 +25,11 @@ public class Customer {
 		return id;
 	}
 	
-	public String getPayment(){
+	public int getPayment(){
 		return payment;
+	}
+	
+	public String getPassword(){
+		return password;
 	}
 }

@@ -1,0 +1,29 @@
+package Assignment1;
+import java.awt.EventQueue;
+import javax.swing.*;
+import java.awt.*;
+
+public class GUIStaff {
+	private JButton paymentRequests;
+	private JFrame frame;
+	private JButton returnRequests;
+	
+	public GUIStaff(){
+		frame = new JFrame("STAFF");
+		
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(500,250);
+		frame.setLayout(null);
+	
+		JCheckBox cash = new JCheckBox("Cash");
+		
+		paymentRequests = new JButton("See payment requests");
+		returnRequests = new JButton("See return requests");
+		
+		paymentRequests.setBounds(50,50,50,50);
+		
+		frame.add(paymentRequests);
+		frame.setVisible(true);
+	}
+}

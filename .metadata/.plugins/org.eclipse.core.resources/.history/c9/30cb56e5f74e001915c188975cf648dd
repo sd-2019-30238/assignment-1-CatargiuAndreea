@@ -1,0 +1,25 @@
+package Assignment1;
+import java.awt.EventQueue;
+import javax.swing.*;
+import java.awt.*;
+
+public class GUICustomer {
+	private JFrame frame;
+	private JTextField textField;
+	private JPanel panel;
+	private JButton CreateButton;
+	
+	public GUICustomer(){
+		frame = new JFrame("USER");
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(500,160);
+		panel = new JPanel();
+		CreateButton = new JButton("Create Account");
+		
+		panel.add(CreateButton);
+		frame.setContentPane(panel);
+		frame.setVisible(true);
+	}
+	
+}
