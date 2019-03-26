@@ -1,0 +1,13 @@
+package Assignment1;
+import java.awt.EventQueue;
+import javax.swing.*;
+import java.awt.*;
+
+public class GUILogInCustomer {
+	private JFrame frame;
+	
+	public GUILogInCustomer(){
+		frame = new JFrame("Account User");
+		
+	}
+}
