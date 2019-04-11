@@ -2227,3 +2227,63 @@
 2019-04-11 21:37:16,322 [Worker-212] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
 2019-04-11 21:37:16,329 [Worker-212] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-04-11 21:37:16,329 [Worker-212] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:11:36,828 [Worker-224] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:11:36,828 [Worker-224] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:11:36,828 [Worker-224] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:11:36,828 [Worker-224] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:43:36,662 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:43:36,665 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:43:36,675 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:43:36,675 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:43:54,961 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:43:54,961 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:43:54,962 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:43:54,962 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:44:15,108 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:15,119 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:44:15,125 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:15,125 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:44:24,167 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:24,167 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:44:24,168 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:24,168 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:44:26,025 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:26,038 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:44:26,048 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:26,048 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:44:40,575 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:40,575 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:44:40,576 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:40,577 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:44:53,581 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:53,589 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:44:53,597 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:44:53,597 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:45:06,369 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:45:06,370 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:45:06,372 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:45:06,374 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:45:57,560 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:45:57,874 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:45:57,880 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:45:57,885 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:46:14,469 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:46:14,469 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:46:14,471 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:46:14,471 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:46:31,933 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:46:31,941 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:46:31,950 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:46:31,950 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:50:24,752 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:50:24,752 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:50:24,752 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:50:24,753 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:50:38,688 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:50:38,703 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:50:38,714 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:50:38,714 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources
+2019-04-11 22:56:31,564 [Worker-244] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:56:31,564 [Worker-244] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\main\resources
+2019-04-11 22:56:31,564 [Worker-244] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-11 22:56:31,565 [Worker-244] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\user\Desktop\FACULTATE\AN3SEM2\PS-BOOKS\assignment-1-CatargiuAndreea\1\src\test\resources

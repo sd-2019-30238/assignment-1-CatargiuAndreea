@@ -47,7 +47,7 @@ public class GUILogInCustomer {
 		textField.setBounds(220, 230, 150, 30);
 		filterTitle.setBounds(220, 200, 50, 30);
 		filterAuthor.setBounds(270, 200, 70, 30);
-		filterReleaseDate.setBounds(340,200, 100, 30 );
+		filterReleaseDate.setBounds(320,200, 100, 30 );
 		
 		frame.add(filter);
 		frame.add(borrow);

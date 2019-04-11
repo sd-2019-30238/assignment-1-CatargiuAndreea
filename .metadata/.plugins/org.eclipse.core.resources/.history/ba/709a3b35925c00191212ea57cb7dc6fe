@@ -13,7 +13,6 @@ public class GUILogInCustomer {
 	private JCheckBox filterGenre;
 	private JCheckBox filterTitle;
 	private JCheckBox filterAuthor;
-	private JCheckBox filterReleaseDate;
 	private JLabel filter;
 	private JTextField textField;
 	//String[] filterString = {"title", "author", "genre", "release date"};
@@ -37,17 +36,15 @@ public class GUILogInCustomer {
 		filter = new JLabel("Filer by: ", JLabel.RIGHT);
 		filterTitle = new JCheckBox("Title");
 		filterAuthor = new JCheckBox("Author");
-		filterReleaseDate = new JCheckBox("Release Date");
 		
 		borrow.setBounds(160,20,150,30);
 		filter.setBounds(110,190,50,50);
 		returnB.setBounds(160, 80, 150, 30);
 		//recomandation.setBounds(120, 140, 150, 30);
-		filterGenre.setBounds(160, 200, 60, 30);
+		filterGenre.setBounds(220, 200, 60, 30);
 		textField.setBounds(220, 230, 150, 30);
-		filterTitle.setBounds(220, 200, 50, 30);
-		filterAuthor.setBounds(270, 200, 70, 30);
-		filterReleaseDate.setBounds(340,200, 100, 30 );
+		filterTitle.setBounds(280, 200, 50, 30);
+		
 		
 		frame.add(filter);
 		frame.add(borrow);
@@ -56,8 +53,6 @@ public class GUILogInCustomer {
 		frame.add(filterGenre);
 		frame.add(textField);
 		frame.add(filterTitle);
-		frame.add(filterAuthor);
-		frame.add(filterReleaseDate);
 		frame.setVisible(true);
 	}
 }
