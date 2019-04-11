@@ -1,0 +1,184 @@
+  
+package dataAccess;
+
+import Model.Customer;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CustomerAccess {
+
+    public void addAccount(String username, String password, String type){
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .buildSessionFactory();
+        Session session = factory.getCurrentSession();
+        try{
+
+            Customer account = new Customer(username, password, type);
+            if(type.equals("staff")){
+                account.setPayment("free");
+            }
+            session.beginTransaction();
+            session.save(account);
+            session.getTransaction().commit();
+        }finally {
+            factory.close();
+        }
+    }
+
+    public Customer readAccount(int id){
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .buildSessionFactory();
+        Session session = factory.getCurrentSession();
+        try{
+
+            session.beginTransaction();
+            Customer account = (Customer) session.get(Customer.class, id);
+            session.getTransaction().commit();
+            return account;
+        }finally {
+            factory.close();
+        }
+
+    }
+
+    public void updateAccount(int id, String payment){
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .buildSessionFactory();
+        Session session = factory.getCurrentSession();
+        try{
+
+            session.beginTransaction();
+            Customer account = (Customer) session.get(Customer.class, id);
+            account.setPayment(payment);
+            session.getTransaction().commit();
+        }finally {
+            factory.close();
+        }
+    }
+
+    public void deleteAccount(int id){
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .buildSessionFactory();
+        Session session = factory.getCurrentSession();
+        try{
+
+            session.beginTransaction();
+            Customer account = (Customer) session.get(Customer.class, id);
+            session.delete(account);
+            session.getTransaction().commit();
+        }finally {
+            factory.close();
+        }
+    }
+
+    public ArrayList<Customer> queryAccount(){
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .buildSessionFactory();
+        Session session = factory.getCurrentSession();
+        try{
+
+            session.beginTransaction();
+
+            ArrayList<Customer> customer = (ArrayList<Customer>) session.createQuery("from Customer").list();
+
+            displayAccounts(customer);
+
+
+            session.getTransaction().commit();
+
+            return customer;
+        }finally {
+            factory.close();
+        }
+    }
+    public ArrayList<Customer> queryLogin(String username, String password){
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .buildSessionFactory();
+        Session session = factory.getCurrentSession();
+        try{
+
+            session.beginTransaction();
+
+            String s = "from Account s where s.username="+"'"+username+"' and s.password= '"+password+"'";
+
+            @SuppressWarnings("unchecked")
+			ArrayList<Customer> accounts = (ArrayList<Customer>) session.createQuery(s).list();
+
+            displayAccounts(accounts);
+
+
+            session.getTransaction().commit();
+
+            return accounts;
+        }finally {
+            factory.close();
+        }
+    }
+    public ArrayList<Customer> queryRegister(String username){
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .buildSessionFactory();
+        Session session = factory.getCurrentSession();
+        try{
+
+            session.beginTransaction();
+
+            String s = "from Account s where s.username="+"'"+username+"'";
+
+            @SuppressWarnings("unchecked")
+			ArrayList<Customer> accounts = (ArrayList<Customer>) session.createQuery(s).list();
+
+            session.getTransaction().commit();
+
+            return accounts;
+        }finally {
+            factory.close();
+        }
+    }
+
+    public static void displayAccounts(List<Customer> customer) {
+        for (Customer b : customer) {
+            System.out.println(b);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        CustomerAccess a = new CustomerAccess();
+        Customer b = new Customer();
+        //a.addAccount("acc","acc","user");
+        //a.queryAccount();
+        a.updateAccount(1, "1 month");
+        b = a.readAccount(1);
+        ArrayList<Customer>aaa=a.queryRegister("cccccc");
+
+
+        System.out.println(aaa.size());
+
+    }
+}
+

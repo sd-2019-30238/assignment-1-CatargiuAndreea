@@ -2,33 +2,66 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
 
-
+@Entity
+@Table
 public class Customer {
-	private String nume;
-	private int id;
-	private Payment myPayment;
-	private String password;
-	List <Book> books=new ArrayList<Book>();
 	
-	public Customer(String nume, int id, String password){
+	@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+    @Column(name = "nume")
+    private String nume;
+    @Column(name = "password")
+    private String password;
+    @Column(name = "myPayment")
+    private String myPayment;
+    //@Column(name = "borrowBooks")
+    //List <Book> borrowBooks = new ArrayList<Book>();
+
+	public Customer(){
+		
+	}
+	
+	public Customer(String nume, String password, String myPayment){
+		//this.id = id;
 		this.nume = nume;
-		this.id = id;
 		this.password = password;
+		this.myPayment = myPayment;
 	}
 	public String getNume(){
 		return nume;
 	}
+	
+	public void setName(String nume){
+		this.nume = nume;
+	}
+	
 	public int getId(){
 		return id;
 	}
 	
-	public Payment getPayment(){
+	public String getPayment(){
 		return myPayment;
+	}
+	
+	public void setPayment(String myPayment){
+		this.myPayment = myPayment;
 	}
 	
 	public String getPassword(){
 		return password;
+	}
+	
+	public void setPassword(String password){
+		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", nume=" + nume + ", password=" + password + ", "
+				+ "payment=" + myPayment + "]";
 	}
 }

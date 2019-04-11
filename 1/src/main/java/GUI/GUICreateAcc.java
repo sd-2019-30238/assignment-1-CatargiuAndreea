@@ -1,7 +1,12 @@
 package GUI;
+import dataAccess.CustomerAccess;
+import bll.Customer;
+import bll.LibraryManagement;
+
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,8 +36,8 @@ public class GUICreateAcc {
 		userL = new JLabel("Set username: ", JLabel.RIGHT);
 		password = new JLabel("Set password: ", JLabel.RIGHT);
 		payment = new JLabel("Set Payment:", JLabel.RIGHT);
-		user = new JTextField("    ");
-		pass = new JTextField("    ");
+		user = new JTextField("");
+		pass = new JTextField("");
 		create = new JButton("Create");
 		paymentBox.setSelectedIndex(2);
 		
@@ -45,6 +50,19 @@ public class GUICreateAcc {
 		create.setBounds(350, 70, 100, 30);
 		paymentBox.setBounds(150, 170, 150, 20);
 		
+		create.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+			CustomerAccess newCustomer = new CustomerAccess();
+			ArrayList<Model.Customer> customers = newCustomer.queryRegister(user.getText());
+			Customer customer = new Customer(user.getText(), pass.getText());
+			int size = customers.size();
+			if(size > 0){
+				GUIError err = new GUIError();
+			}
+			else{
+				customer.createCustomer();
+			}
+			}});
 			
 		frame.add(userL);
 		frame.add(password);

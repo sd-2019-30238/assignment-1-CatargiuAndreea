@@ -1,0 +1,31 @@
+package GUI;
+import java.awt.EventQueue;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.*;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+
+public class GUIError {
+	private JFrame frame;
+	private JPanel panel;
+	private JLabel err;
+	
+	public GUIError(){
+	frame = new JFrame("");
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(200,200);
+	panel = new JPanel();
+	
+	err = new JLabel("ERROR");
+	err.setBounds(100, 100, 100, 80);
+	frame.add(err);
+	frame.setContentPane(panel);
+	frame.setVisible(true);
+	}
+}

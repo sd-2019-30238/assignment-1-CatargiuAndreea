@@ -1,10 +1,16 @@
 package GUI;
+import dataAccess.CustomerAccess;
+//import bll.Customer;
+import Model.Customer;
+
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import java.awt.*;
+
 
 public class GUICustomer {
 	private JFrame frame;
@@ -26,8 +32,8 @@ public class GUICustomer {
 		CreateButton = new JButton("Create Account");
 		userL = new JLabel("USER: ", JLabel.RIGHT);
 		password = new JLabel("PASSWORD: ", JLabel.RIGHT);
-		user = new JTextField("Your username");
-		pass = new JTextField("Your password");
+		user = new JTextField("");
+		pass = new JTextField("");
 		ok = new JButton("OK");
 		
 		CreateButton.setBounds(160,20,150,50);
@@ -40,14 +46,23 @@ public class GUICustomer {
 		CreateButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		       //@SuppressWarnings("unused")
-			GUICreateAcc createCustomerAccount = new GUICreateAcc();
+		    	GUICreateAcc createCustomerAccount = new GUICreateAcc();
 		    }
 		});
 		
 		ok.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		       //@SuppressWarnings("unused")
-			GUILogInCustomer logIn = new GUILogInCustomer();
+		    	CustomerAccess customer = new CustomerAccess();
+		    	ArrayList<Customer>customer1 = customer.queryLogin(user.getText(), pass.getText());
+		    	if(customer1.size() > 0){
+		    		GUILogInCustomer login = new GUILogInCustomer();
+		    		System.out.println("da");
+		    	}
+		    	else{
+		    		GUIError err = new GUIError();
+		    		user.setText("");
+		    		pass.setText("");
+		    }
 		    }
 		});
 		
@@ -62,5 +77,7 @@ public class GUICustomer {
 	
 
 	}
+	
+
 	
 }

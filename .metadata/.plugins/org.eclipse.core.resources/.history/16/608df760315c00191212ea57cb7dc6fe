@@ -1,0 +1,77 @@
+package Model;
+import javax.persistence.*;
+
+import dataAccess.JDBC;
+
+@Entity
+@Table
+public class Book {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "id")
+	private int id;
+	@Column(name = "isAvailable")
+	private boolean isAvailable;
+	@Column(name = "genre")
+	private String genre;
+	@Column(name = "releaseDate")
+	private int releaseDate;
+	@Column(name = "author")
+	private String author;
+	@Column(name = "title")
+	private String title;
+	
+	
+	
+	//private int id;
+	//public boolean isAvailable;
+	//private String genre;
+	//private int releaseDate;
+	//private String author;
+	//private String title;
+
+	
+	public Book(int id, String genre, int releaseDate, String author, String title, boolean isAvailable){
+		this.id = id;
+		this.isAvailable = isAvailable;
+		this.genre = genre;
+		this.releaseDate = releaseDate;
+		this.author = author;
+		this.title = title;
+
+	}
+	
+	public int getId(){
+		return id;
+	}
+	
+	public boolean getAvailable(){
+		return isAvailable;
+	}
+	
+	public String getGenre(){
+		return genre;
+	}
+	
+	public int getReleaseDate(){
+		return releaseDate;
+	}
+	
+	public String getAuthor(){
+		return author;
+	}
+	
+	public String getTitle(){
+		return title;
+	}
+	
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", isAvailable=" + isAvailable + ", genre=" + genre + ", "
+				+ "releaseDate=" + releaseDate + ", author =" + author + ", title = " + title + "]";
+	}
+
+	
+	
+}

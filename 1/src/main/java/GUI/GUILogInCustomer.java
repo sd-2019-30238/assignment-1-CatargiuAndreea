@@ -10,10 +10,14 @@ public class GUILogInCustomer {
 	private JButton returnB;
 	private JButton recomandation;
 	private JButton borrow;
+	private JCheckBox filterGenre;
+	private JCheckBox filterTitle;
+	private JCheckBox filterAuthor;
 	private JLabel filter;
-	String[] filterString = {"title", "author", "genre", "release date"};
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	JComboBox filterChoice = new JComboBox(filterString);
+	private JTextField textField;
+	//String[] filterString = {"title", "author", "genre", "release date"};
+	//@SuppressWarnings({ "unchecked", "rawtypes" })
+	//JComboBox filterChoice = new JComboBox(filterString);
 
 	
 	public GUILogInCustomer(){
@@ -25,22 +29,30 @@ public class GUILogInCustomer {
 		frame.setLayout(null);
 	
 		borrow = new JButton("Borrow books");
-		filter = new JLabel("Filter by ", JLabel.RIGHT);
 		returnB = new JButton("Return books");
 		recomandation = new JButton("Recomandations");
-		filterChoice.setSelectedIndex(3);
+		textField = new JTextField("Write recommendation");
+		filterGenre = new JCheckBox("Genre");
+		filter = new JLabel("Filer by: ", JLabel.RIGHT);
+		filterTitle = new JCheckBox("Title");
+		filterAuthor = new JCheckBox("Author");
 		
 		borrow.setBounds(160,20,150,30);
 		filter.setBounds(160,190,50,50);
 		returnB.setBounds(160, 80, 150, 30);
-		recomandation.setBounds(160, 140, 150, 30);
-		filterChoice.setBounds(220, 200, 150, 30);
+		recomandation.setBounds(120, 140, 150, 30);
+		filterGenre.setBounds(220, 200, 60, 30);
+		textField.setBounds(220, 230, 150, 30);
+		filterTitle.setBounds(280, 200, 50, 30);
+		
 		
 		frame.add(filter);
 		frame.add(borrow);
 		frame.add(returnB);
 		frame.add(recomandation);
-		frame.add(filterChoice);
+		frame.add(filterGenre);
+		frame.add(textField);
+		frame.add(filterTitle);
 		frame.setVisible(true);
 	}
 }

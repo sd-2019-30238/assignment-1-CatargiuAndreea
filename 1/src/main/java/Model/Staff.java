@@ -1,12 +1,27 @@
 package Model;
+import javax.persistence.*;
 
+
+@Entity
+@Table
 public class Staff {
-	private int idStaff;
-	private String name;
-	private String password;
+
+	@Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "idStaff")
+    private int idStaff;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "password")
+    private String password;
 	
-	public Staff(int idStaff, String name, String password){
-		this.idStaff = idStaff;
+    public Staff(){
+    	
+    	
+    }
+    
+	public Staff(String name, String password){
+		//this.idStaff = idStaff;
 		this.name = name;
 		this.password = password;
 	}
@@ -21,5 +36,9 @@ public class Staff {
 	
 	public String getPassword(){
 		return password;
+	}
+	@Override
+	public String toString() {
+		return "Customer [id=" + idStaff + ", nume=" + name + ", password=" + password +"]";
 	}
 }
