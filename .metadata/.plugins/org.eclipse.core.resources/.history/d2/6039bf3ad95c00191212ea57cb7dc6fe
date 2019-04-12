@@ -27,6 +27,7 @@ import java.awt.*;
 public class GUILogInCustomer {
 	private JFrame frame;
 	private JButton returnB;
+	private JButton recomandation;
 	private JButton borrow;
 	private JCheckBox filterGenre;
 	private JCheckBox filterTitle;
@@ -36,7 +37,9 @@ public class GUILogInCustomer {
 	private JLabel filter;
 	private JTextField textField;
 	private JButton ok;
-
+	private DefaultTableModel modelRecommendations;
+	private JTable tabel;
+	private JTable recommendationsTable;
 	//String[] filterString = {"title", "author", "genre", "release date"};
 	//@SuppressWarnings({ "unchecked", "rawtypes" })
 	//JComboBox filterChoice = new JComboBox(filterString);
@@ -52,6 +55,7 @@ public class GUILogInCustomer {
 	
 		borrow = new JButton("Borrow books");
 		returnB = new JButton("Return books");
+		recomandation = new JButton("Recomandations");
 		textField = new JTextField("");
 		filterGenre = new JCheckBox("Genre");
 		filter = new JLabel("Filer by: ", JLabel.RIGHT);
@@ -60,7 +64,7 @@ public class GUILogInCustomer {
 		filterReleaseDate = new JCheckBox("Release Date");
 		popular = new JCheckBox("Popular");
 		ok = new JButton("Apply");
-
+		recommendationsTable = new JTable();
 
 		
 		borrow.setBounds(160,20,150,30);
@@ -75,6 +79,15 @@ public class GUILogInCustomer {
 		popular.setBounds(390, 150, 90, 30);
 		ok.setBounds(190, 230, 90, 30);
 		
+		modelRecommendations = new DefaultTableModel() {
+            public boolean isCellEditable(int row, int column) {
+                return false;// This causes all cells to be not editable
+            }
+        };
+		
+		 recommendationsTable.setModel(modelRecommendations);
+		
+		 
 	
 		ok.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -135,6 +148,7 @@ public class GUILogInCustomer {
 		frame.add(filter);
 		frame.add(borrow);
 		frame.add(returnB);
+		//frame.add(recomandation);
 		frame.add(filterGenre);
 		frame.add(textField);
 		frame.add(filterTitle);
