@@ -1,9 +1,0 @@
-package Assignment1;
-import java.util.*;
-public class lending {
-	private int id;
-	private int idBook;
-	private int idCustomer;
-	
-	public lending
-}

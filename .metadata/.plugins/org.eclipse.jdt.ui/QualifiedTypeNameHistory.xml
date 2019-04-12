@@ -3,5 +3,14 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="antlr.collections.List"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="Model.Staff"/>
+<fullyQualifiedTypeName name="bll.Customer"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="dataAccess.CustomerAccess"/>
+<fullyQualifiedTypeName name="bll.LibraryManagement"/>
+<fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="dataAccess.BookAccess"/>
+<fullyQualifiedTypeName name="dataAccess.BorrowedBooksAccess"/>
+<fullyQualifiedTypeName name="bll.Staff"/>
 </qualifiedTypeNameHistroy>
