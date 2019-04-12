@@ -1,0 +1,62 @@
+package bll;
+
+import Model.Book;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import java.sql.Array;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BookBLL {
+    public void addBook(boolean isAvailable, String genre, int releaseDate, String author, String title, int borrowed) {
+	       BookAccess.addBook(isAvailable,genre,releaseDate,author,title,borrowed);
+    }
+	
+	public Book selectBook(int id){
+	       BookAccess.selectBook(id);
+    }
+	
+	public void updateBook(int id, boolean isAvailable){
+	       BookAccess.updateBook(id, isAvailable);
+    }
+	
+    public void updateBook(int id, String title, String author, int date, int borrowed){
+	       BookAccess.updateBook(id, title, author, date, borrowed);
+    }
+	
+	public void deleteBook(int id){
+	       BookAccess.deleteBook(id);
+    }
+	
+	public ArrayList<Book> filterByReleaseDate(int releaseDate){
+         return BookAccess.filterByReleaseDate(id);
+    }
+	
+	public ArrayList<Book> filterByString(String column, String string){
+         return BookAccess.filterByString(column,string);
+    }
+	
+	public ArrayList<Book> getAllBooks(){
+         return BookAccess.getAllBooks();
+    }
+	
+	public ArrayList<Book> getBooksByPopularity(){
+         return BookAccess.getBooksByPopularity();
+    }
+	
+	public int queryByID(int id){
+         return BookAccess.queryByID(id);
+    }
+	
+	public ArrayList<Book> queryByTitle(String title){
+         return BookAccess.queryByTitle(title);
+    }
+	
+	public ArrayList<Book> queryByTitle(String title){
+         return BookAccess.queryByTitle(title);
+    }
+	
+}

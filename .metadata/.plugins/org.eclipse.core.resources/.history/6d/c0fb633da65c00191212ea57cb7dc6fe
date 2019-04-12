@@ -1,0 +1,9 @@
+package bll;
+
+import java.util.ArrayList;
+
+import Model.Book;
+
+public interface inter {
+	 ArrayList<Book> getRecommendation(String type);
+}

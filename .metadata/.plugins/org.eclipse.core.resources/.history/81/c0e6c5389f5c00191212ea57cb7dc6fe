@@ -1,0 +1,19 @@
+package bll;
+import Model.Book;
+import java.util.ArrayList;
+
+
+public class RecommendationFactory {
+	public Recommendation getRecommendations(String rec){
+		if(rec == null){
+			return null;
+		}
+		if(rec.equalsIgnoreCase("Genre")){
+			return new GenreRecommendation();
+		}
+		else if(rec.equalsIgnoreCase("Popular")){
+			return new PopularRecommendation();
+		}
+		return null;
+	}
+}

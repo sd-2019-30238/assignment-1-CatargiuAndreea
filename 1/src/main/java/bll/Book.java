@@ -1,4 +1,11 @@
 package bll;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import dataAccess.BookAccess;
+
+
 
 public class Book {
 
@@ -25,6 +32,9 @@ public class Book {
 		this.borrowed = borrowed;
 
 	}
+	public ArrayList<Model.Book> getAllBooks(ArrayList<Model.Book> arrayList){
+        return BookAccess.getAllBooks();
+   }
 	
 	public int getId(){
 		return id;

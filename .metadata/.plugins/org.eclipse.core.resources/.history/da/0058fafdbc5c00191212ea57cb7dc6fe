@@ -1,0 +1,154 @@
+package GUI;
+import java.awt.EventQueue;
+import bll.AuthorRecommendation;
+import bll.Book;
+import bll.Customer;
+import bll.GenreRecommendation;
+import bll.PopularRecommendation;
+import bll.Recommendation;
+import bll.RecommendationFactory;
+import bll.TitleRecommendation;
+import dataAccess.BookAccess;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
+import java.awt.*;
+
+
+
+public class GUILogInCustomer {
+	private JFrame frame;
+	private JButton returnB;
+	private JButton recomandation;
+	private JButton borrow;
+	private JCheckBox filterGenre;
+	private JCheckBox filterTitle;
+	private JCheckBox filterAuthor;
+	private JCheckBox filterReleaseDate;
+	private JCheckBox popular;
+	private JLabel filter;
+	private JTextField textField;
+	private JButton ok;
+	private DefaultTableModel modelRecommendations;
+	private JTable tabel;
+	private JTable recommendationsTable;
+	//String[] filterString = {"title", "author", "genre", "release date"};
+	//@SuppressWarnings({ "unchecked", "rawtypes" })
+	//JComboBox filterChoice = new JComboBox(filterString);
+
+	
+	public GUILogInCustomer(){
+		frame = new JFrame("USER");
+		
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(800,800);
+		frame.setLayout(null);
+	
+		borrow = new JButton("Borrow books");
+		returnB = new JButton("Return books");
+		recomandation = new JButton("Recomandations");
+		textField = new JTextField("");
+		filterGenre = new JCheckBox("Genre");
+		filter = new JLabel("Filer by: ", JLabel.RIGHT);
+		filterTitle = new JCheckBox("Title");
+		filterAuthor = new JCheckBox("Author");
+		filterReleaseDate = new JCheckBox("Release Date");
+		popular = new JCheckBox("Popular");
+		ok = new JButton("Apply");
+		recommendationsTable = new JTable();
+
+		
+		borrow.setBounds(160,20,150,30);
+		filter.setBounds(60,140,50,50);
+		returnB.setBounds(160, 80, 150, 30);
+		//recomandation.setBounds(120, 140, 150, 30);
+		filterGenre.setBounds(110, 150, 60, 30);
+		textField.setBounds(220, 190, 150, 30);
+		filterTitle.setBounds(170, 150, 50, 30);
+		filterAuthor.setBounds(220, 150, 70, 30);
+		filterReleaseDate.setBounds(290,150, 100, 30 );
+		popular.setBounds(390, 150, 90, 30);
+		ok.setBounds(190, 230, 90, 30);
+		
+		modelRecommendations = new DefaultTableModel() {
+            public boolean isCellEditable(int row, int column) {
+                return false;// This causes all cells to be not editable
+            }
+        };
+		
+		 recommendationsTable.setModel(modelRecommendations);
+		
+		 
+	
+		ok.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				if(filterGenre.isSelected()){
+					String s = textField.getText();
+					RecommendationFactory recFac = new RecommendationFactory();
+					Recommendation rec = recFac.getRecommentations("genre");
+					//BookAccess b = new BookAccess();
+					ArrayList<Model.Book> books = rec.getReccomendation("thriller");
+					Book bb = new Book();
+					bb.getAllBooks(rec.getReccomendation("thriller"));
+				
+					/* RecommendationFactory r = new RecommendationFactory();
+        Recommendation rr = r.getRecommentations("Release Date");
+        System.out.println(rr.getReccomendation("Thomas Harris"));
+        ArrayList<Book> books = rr.getReccomendation("Thomas Harris");*/
+					for(Object b: books){
+						System.out.println(((Book) b).getTitle());}
+					
+					tabel = MakeTable.createTable(books);
+					tabel.setBounds(400, 370, 510, 175);
+					frame.add(tabel);
+					tabel.repaint();
+					}
+				else if (filterAuthor.isSelected()){
+					String s = textField.getText();
+					RecommendationFactory recFac = new RecommendationFactory();
+					Recommendation rec = recFac.getRecommentations("author");
+					//BookAccess b = new BookAccess();
+					ArrayList<Object> books = new ArrayList<Object>();
+					Book bb = new Book();
+					bb.getAllBooks(rec.getReccomendation(s));
+				
+					/* RecommendationFactory r = new RecommendationFactory();
+        Recommendation rr = r.getRecommentations("Release Date");
+        System.out.println(rr.getReccomendation("Thomas Harris"));
+        ArrayList<Book> books = rr.getReccomendation("Thomas Harris");*/
+        for(Object b: books){
+            System.out.println(((Book) b).getTitle());}
+					
+					tabel = MakeTable.createTable(books);
+					tabel.setBounds(400, 370, 510, 175);
+					frame.add(tabel);
+					tabel.repaint();
+				}
+			}
+	
+		});
+		
+			
+		frame.add(filter);
+		frame.add(borrow);
+		frame.add(returnB);
+		//frame.add(recomandation);
+		frame.add(filterGenre);
+		frame.add(textField);
+		frame.add(filterTitle);
+		frame.add(filterAuthor);
+		frame.add(filterReleaseDate);
+		frame.add(popular);
+		frame.add(ok);
+		frame.setVisible(true);
+	}
+}

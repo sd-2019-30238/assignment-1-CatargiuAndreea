@@ -1,0 +1,355 @@
+package dataAccess;
+
+import Model.Book;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import java.sql.Array;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BookAccess {
+
+
+
+    public void addBook(boolean isAvailable, String genre, int releaseDate, String author, String title, int borrowed) {
+        SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+        try {
+            Book book1 = new Book (isAvailable, genre, releaseDate, author, title, borrowed);
+            session.beginTransaction();
+            session.save(book1);
+            session.getTransaction().commit();
+        }finally{
+            factory.close();
+        }
+    }
+
+    public Book selectBook(int id){
+        // create session factory
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+
+        try {
+
+            session.beginTransaction();
+            Book myBook = (Book) session.get(Book.class, id);
+            session.getTransaction().commit();
+
+            return myBook;
+
+        }
+        finally {
+            factory.close();
+        }
+
+    }
+
+    public void updateBook(int id, boolean isAvailable){
+        // create session factory
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+
+        try {
+
+            session.beginTransaction();
+            @SuppressWarnings("unused")
+			Book myBook = (Book) session.get(Book.class, id);
+           // myBook.setAvailable(isAvailable);
+           // myBook.setBorrowedTimes(times);
+            session.getTransaction().commit();
+
+        }
+        finally {
+            factory.close();
+        }
+
+    }
+
+    public void updateBooks(int id, String title, String author, int date, int borrowed){
+        // create session factory
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+
+        try {
+
+            session.beginTransaction();
+            Book myBook = (Book) session.get(Book.class, id);
+            myBook.setTitle(title);
+            myBook.setAuthor(author);
+            myBook.setReleaseDate(date);
+            myBook.setBorrowed(borrowed);
+            session.getTransaction().commit();
+
+        }
+        finally {
+            factory.close();
+        }
+
+    }
+
+
+    public void deleteBook(int id){
+        // create session factory
+        SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+
+        try {
+
+            session.beginTransaction();
+
+            Book myBook = (Book) session.get(Book.class, id);
+
+            session.delete(myBook);
+
+            session.getTransaction().commit();
+
+        }
+        finally {
+            factory.close();
+        }
+
+    }
+
+    public ArrayList<Book> filterByReleaseDate(int releaseDate) {
+        // create session factory
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+
+        try {
+
+            session.beginTransaction();
+
+            String s = "from Book s where s.releaseDate="+releaseDate;
+
+            @SuppressWarnings("unchecked")
+			ArrayList<Book> books = (ArrayList<Book>) session.createQuery(s).list();
+            displayBooks(books);
+            session.getTransaction().commit();
+
+            return books;
+
+        } finally {
+            factory.close();
+        }
+    }
+
+    public ArrayList<Book> filterByString(String column, String string) {
+        // create session factory
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+
+        try {
+
+            session.beginTransaction();
+
+            String s = "";
+
+            switch (column){
+                case "author": s = "from Book s where s.author="+"'"+string+"'"; break;
+                case "title": s = "from Book s where s.title="+"'"+string+"'"; break;
+                case "genre": s = "from Book s where s.genre="+"'"+string+"'"; break;
+            }
+
+            @SuppressWarnings("unchecked")
+			ArrayList<Book>books = (ArrayList<Book>) session.createQuery(s).list();
+            session.getTransaction().commit();
+
+            return  books;
+
+        } finally {
+            factory.close();
+        }
+    }
+
+    public ArrayList<Book> getAllBooks() {
+                // create session factory
+                @SuppressWarnings("deprecation")
+				SessionFactory factory = new Configuration()
+                        .configure("hibernate.cfg.xml")
+                        .addAnnotatedClass(Book.class)
+                        .buildSessionFactory();
+
+                // create session
+                Session session = factory.getCurrentSession();
+
+                try {
+
+                    session.beginTransaction();
+                    @SuppressWarnings("unchecked")
+					ArrayList<Book>books = (ArrayList<Book>) session.createQuery("from Book").list();
+                    // displayBooks(books);
+                    session.getTransaction().commit();
+
+                    return books;
+
+        } finally {
+            factory.close();
+        }
+    }
+    public ArrayList<Book> getBooksByPopularity() {
+        // create session factory
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+
+        try {
+
+            session.beginTransaction();
+            @SuppressWarnings("unchecked")
+			ArrayList<Book>books = (ArrayList<Book>) session.createQuery("from Book s where s.borrowed > 3").list();
+            // displayBooks(books);
+            session.getTransaction().commit();
+
+            return books;
+
+        } finally {
+            factory.close();
+        }
+    }
+
+    public int queryByID(int id) {
+        // create session factory
+        SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+
+        try {
+            String s = "from Book s where s.id="+id;
+            session.beginTransaction();
+            @SuppressWarnings("unchecked")
+			ArrayList<Book>books = (ArrayList<Book>) session.createQuery(s).list();
+            // displayBooks(books);
+            session.getTransaction().commit();
+
+            return books.size();
+
+        } finally {
+            factory.close();
+        }
+    }
+    public ArrayList<Book> queryByTitle(String title) {
+        // create session factory
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Book.class)
+                .buildSessionFactory();
+
+        // create session
+        Session session = factory.getCurrentSession();
+
+        try {
+            String s = "from Book s where s.title= '"+title+"'";
+            session.beginTransaction();
+            @SuppressWarnings("unchecked")
+			ArrayList<Book>books = (ArrayList<Book>) session.createQuery(s).list();
+            // displayBooks(books);
+            session.getTransaction().commit();
+
+            return books;
+
+        } finally {
+            factory.close();
+        }
+    }
+
+
+
+
+    public static void displayBooks(ArrayList<Book> books) {
+        for (Book b : books) {
+            System.out.println(b);
+        }
+    }
+
+    public static void main(String[] args) {
+        BookAccess b = new BookAccess();
+        //Book b1 = new Book();
+        b.deleteBook(1);
+        b.deleteBook(2);
+        b.deleteBook(3);
+        b.deleteBook(4);
+        b.deleteBook(5);
+        b.deleteBook(6);
+        b.deleteBook(7);
+        b.deleteBook(8);
+        //b.addBook(true, "Adventure", 10092010, "Harper", "Chasing Mavericks");
+        //b.addBook(true, "Romance", 10102010, "Clelie Avil", "I am here");
+        //b.addBook(false, "Thriller", 10112012, "Thomas Harris", "Hannibal1");
+        //b.addBook(true, "Thriller", 24102019, "Thomas Harris", "Hannibal2");
+        //b.addBook(false, "Thriller", 12111999, "Thomas Harris", "Hannibal3");
+        //b.addBook(true, "Thriller", 18042019, "Thomas Harris", "Hannibal4");
+       // b.updateBook(1,false);
+        //b.getAllBooks();
+        //ArrayList<Book>boo = b.getAllBooks();
+
+        //System.out.println(boo.size());
+        //Book book = boo.get(0);
+      // System.out.println(book.getId()+" "+book.getTitle());
+
+
+
+        //displayBooks(boo);
+
+
+
+    }
+
+
+
+
+
+
+}

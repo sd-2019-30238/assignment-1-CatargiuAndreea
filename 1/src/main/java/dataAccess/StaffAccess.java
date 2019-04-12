@@ -178,12 +178,6 @@ public class StaffAccess {
       
       //a.queryAccount();
       a.deleteStaff(4);
-      //b = a.readAccount(4);
-      ///ArrayList<Customer>aaa=a.queryRegister("cccccc");
-
-
-      //System.out.println(aaa.size());
-
   }
 }
 

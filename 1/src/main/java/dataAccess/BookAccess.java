@@ -204,7 +204,7 @@ public class BookAccess {
         }
     }
 
-    public ArrayList<Book> getAllBooks() {
+    public static ArrayList<Book> getAllBooks() {
                 // create session factory
                 @SuppressWarnings("deprecation")
 				SessionFactory factory = new Configuration()
@@ -316,9 +316,9 @@ public class BookAccess {
 
     public static void main(String[] args) {
         BookAccess b = new BookAccess();
-        Book b1 = new Book();
-        b.addBook(true, "thriller", 9012017, "Jordan Peterson", "12 rules of life", 1);
-        //b.addBook(true, "Adventure", 10092010, "Harper", "Chasing Mavericks");
+        //Book b1 = new Book();
+
+        b.addBook(true, "Adventure", 10092010, "James", "Moris", 5);
         //b.addBook(true, "Romance", 10102010, "Clelie Avil", "I am here");
         //b.addBook(false, "Thriller", 10112012, "Thomas Harris", "Hannibal1");
         //b.addBook(true, "Thriller", 24102019, "Thomas Harris", "Hannibal2");
@@ -326,15 +326,15 @@ public class BookAccess {
         //b.addBook(true, "Thriller", 18042019, "Thomas Harris", "Hannibal4");
        // b.updateBook(1,false);
         //b.getAllBooks();
-        //ArrayList<Book>boo = b.getAllBooks();
+        //ArrayList<Book>aha = b.getAllBooks();
 
         //System.out.println(boo.size());
-        //Book book = boo.get(0);
+        //Book book = aha.get(0);
       // System.out.println(book.getId()+" "+book.getTitle());
 
 
 
-        //displayBooks(boo);
+        //displayBooks(aha);
 
 
 

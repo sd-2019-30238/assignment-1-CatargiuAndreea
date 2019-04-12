@@ -1,0 +1,39 @@
+package bll;
+import Model.Book;
+import java.util.ArrayList;
+
+public class RecommendationFactory {
+    public Recommendation getRecommentations(String rec){
+        if(rec == null){
+            return null;
+        }
+        if(rec.equalsIgnoreCase("Genre")){
+            return new GenreRecommendation();
+
+        }
+        else if(rec.equalsIgnoreCase("Title")){
+        	return new TitleRecommendation();
+        }
+        else if(rec.equalsIgnoreCase("Author")){
+        	return new AuthorRecommendation();
+        }
+        else if(rec.equalsIgnoreCase("Release Date")){
+        	return new ReleaseRecommendation();
+        }
+        else if(rec.equalsIgnoreCase("Popular")){
+           return new PopularRecommendation();
+        }
+        return null;
+
+    }
+
+    public static void main(String[] args) {
+        RecommendationFactory r = new RecommendationFactory();
+        Recommendation rr = r.getRecommentations("Release Date");
+        System.out.println(rr.getReccomendation("Thomas Harris"));
+        ArrayList<Book> books = rr.getReccomendation("Thomas Harris");
+        for(Book b: books){
+            System.out.println(b.getTitle());
+        }
+    } 
+}

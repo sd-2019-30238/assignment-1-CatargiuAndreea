@@ -1,0 +1,5 @@
+package bll;
+
+public interface inter {
+	 Recommendation getRecommendation(String type);
+}

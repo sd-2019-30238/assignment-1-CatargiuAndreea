@@ -1,0 +1,17 @@
+package bll;
+import java.util.ArrayList;
+
+import Model.Book;
+import dataAccess.BookAccess;
+
+
+
+public class ReleaseRecommendation implements Recommendation{
+	@Override
+	 public ArrayList<Book> getReccomendation(String releaseDate) {
+	        BookAccess bookAccess = new BookAccess();
+	        int number;
+			return bookAccess.filterByReleaseDate(number);
+
+	    }
+}

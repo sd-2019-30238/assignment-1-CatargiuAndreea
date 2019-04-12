@@ -1,0 +1,29 @@
+package bll;
+import Model.Book;
+import java.util.ArrayList;
+
+public class RecommendationFactory {
+    public Recommendation getRecommentations(String rec){
+        if(rec == null){
+            return null;
+        }
+        if(rec.equalsIgnoreCase("Genre")){
+            return new GenreRecommendation();
+
+        } else if(rec.equalsIgnoreCase("Popular")){
+           /return new RecommendationByPopularity();
+        }
+        return null;
+
+    }
+
+    public static void main(String[] args) {
+        RecommendationFactory r = new RecommendationFactory();
+        Recommendation rr = r.getRecommentations("genre");
+        System.out.println(rr.getReccomendation("thriller"));
+        ArrayList<Book> books = rr.getReccomendation("thriller");
+        for(Book b: books){
+            System.out.println(b.getTitle());
+        }
+    } 
+}

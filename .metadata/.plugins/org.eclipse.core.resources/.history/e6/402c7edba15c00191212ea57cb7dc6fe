@@ -1,0 +1,29 @@
+package bll;
+import Model.Book;
+import java.util.ArrayList;
+
+public class RecommendationFactory implements inter {
+
+    public Recommendation getRecommendation(String type) {
+        if(type.equals("Genre")){
+            return new GenreRecommendation();
+        }
+       // else
+        //    return new AuthorRecommendation();
+
+    }
+
+
+    public static void main(String[] args) {
+        RecommendationFactory r = new RecommendationFactory();
+        inter rr;
+        //System.out.println(rr.getRecommendation("comedy"));
+        Recommendation books = rr.getRecommendation("thriller");
+        for(Book b: books){
+            System.out.println(b.getTitle());
+        }
+    }
+
+
+	
+}

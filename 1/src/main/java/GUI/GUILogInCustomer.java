@@ -1,9 +1,28 @@
 package GUI;
 import java.awt.EventQueue;
+import bll.AuthorRecommendation;
+import bll.Book;
+import bll.Customer;
+import bll.GenreRecommendation;
+import bll.PopularRecommendation;
+import bll.Recommendation;
+import bll.RecommendationFactory;
+import bll.TitleRecommendation;
+import dataAccess.BookAccess;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 import java.awt.*;
+
+
 
 public class GUILogInCustomer {
 	private JFrame frame;
@@ -14,8 +33,13 @@ public class GUILogInCustomer {
 	private JCheckBox filterTitle;
 	private JCheckBox filterAuthor;
 	private JCheckBox filterReleaseDate;
+	private JCheckBox popular;
 	private JLabel filter;
 	private JTextField textField;
+	private JButton ok;
+	private DefaultTableModel modelRecommendations;
+	private JTable tabel;
+	private JTable recommendationsTable;
 	//String[] filterString = {"title", "author", "genre", "release date"};
 	//@SuppressWarnings({ "unchecked", "rawtypes" })
 	//JComboBox filterChoice = new JComboBox(filterString);
@@ -26,29 +50,101 @@ public class GUILogInCustomer {
 		
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(500,400);
+		frame.setSize(800,800);
 		frame.setLayout(null);
 	
 		borrow = new JButton("Borrow books");
 		returnB = new JButton("Return books");
 		recomandation = new JButton("Recomandations");
-		textField = new JTextField("Write recommendation");
+		textField = new JTextField("");
 		filterGenre = new JCheckBox("Genre");
 		filter = new JLabel("Filer by: ", JLabel.RIGHT);
 		filterTitle = new JCheckBox("Title");
 		filterAuthor = new JCheckBox("Author");
 		filterReleaseDate = new JCheckBox("Release Date");
+		popular = new JCheckBox("Popular");
+		ok = new JButton("Apply");
+		recommendationsTable = new JTable();
+
 		
 		borrow.setBounds(160,20,150,30);
-		filter.setBounds(110,190,50,50);
+		filter.setBounds(60,140,50,50);
 		returnB.setBounds(160, 80, 150, 30);
 		//recomandation.setBounds(120, 140, 150, 30);
-		filterGenre.setBounds(160, 200, 60, 30);
-		textField.setBounds(220, 230, 150, 30);
-		filterTitle.setBounds(220, 200, 50, 30);
-		filterAuthor.setBounds(270, 200, 70, 30);
-		filterReleaseDate.setBounds(340,200, 100, 30 );
+		filterGenre.setBounds(110, 150, 60, 30);
+		textField.setBounds(220, 190, 150, 30);
+		filterTitle.setBounds(170, 150, 50, 30);
+		filterAuthor.setBounds(220, 150, 70, 30);
+		filterReleaseDate.setBounds(290,150, 100, 30 );
+		popular.setBounds(390, 150, 90, 30);
+		ok.setBounds(190, 230, 90, 30);
 		
+		modelRecommendations = new DefaultTableModel() {
+            public boolean isCellEditable(int row, int column) {
+                return false;// This causes all cells to be not editable
+            }
+        };
+		
+		 recommendationsTable.setModel(modelRecommendations);
+		
+		 
+	
+		ok.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				if(filterGenre.isSelected()){
+					String s = textField.getText();
+					RecommendationFactory recFac = new RecommendationFactory();
+					Recommendation rec = recFac.getRecommentations("genre");
+					//BookAccess b = new BookAccess();
+					ArrayList<Model.Book> books = rec.getReccomendation(s);
+					Book bb = new Book();
+					bb.getAllBooks(rec.getReccomendation(s));
+					for(Model.Book b: books){
+						 System.out.println(b.getTitle() + " " + b.getAuthor() + " " + b.getAvailable()+ " " + b.getReleaseDate());}
+
+					}
+				else if (filterAuthor.isSelected()){
+					String s = textField.getText();
+					RecommendationFactory recFac = new RecommendationFactory();
+					Recommendation rec = recFac.getRecommentations("author");
+					//BookAccess b = new BookAccess();
+					ArrayList<Model.Book> books = rec.getReccomendation(s);
+					Book bb = new Book();
+					bb.getAllBooks(rec.getReccomendation(s));
+					for(Model.Book b: books){
+						 System.out.println(b.getTitle() + " " + b.getAuthor() + " " + b.getAvailable()+ " " + b.getReleaseDate());
+					}
+       
+				}
+				else if (filterTitle.isSelected()){
+					String s = textField.getText();
+					RecommendationFactory recFac = new RecommendationFactory();
+					Recommendation rec = recFac.getRecommentations("title");
+					//BookAccess b = new BookAccess();
+					ArrayList<Model.Book> books = rec.getReccomendation(s);
+					Book bb = new Book();
+					bb.getAllBooks(rec.getReccomendation(s));
+					for(Model.Book b: books){
+						 System.out.println(b.getTitle() + " " + b.getAuthor() + " " + b.getAvailable()+ " " + b.getReleaseDate());
+					}
+				}
+				else if (popular.isSelected()){
+					String s = textField.getText();
+					RecommendationFactory recFac = new RecommendationFactory();
+					Recommendation rec = recFac.getRecommentations("popular");
+					//BookAccess b = new BookAccess();
+					ArrayList<Model.Book> books = rec.getReccomendation(s);
+					Book bb = new Book();
+					bb.getAllBooks(rec.getReccomendation(s));
+					for(Model.Book b: books){
+						 System.out.println(b.getTitle() + " " + b.getAuthor() + " " + b.getAvailable()+ " " + b.getReleaseDate());
+					}
+				}
+			}
+	
+		});
+		
+			
 		frame.add(filter);
 		frame.add(borrow);
 		frame.add(returnB);
@@ -58,6 +154,8 @@ public class GUILogInCustomer {
 		frame.add(filterTitle);
 		frame.add(filterAuthor);
 		frame.add(filterReleaseDate);
+		frame.add(popular);
+		frame.add(ok);
 		frame.setVisible(true);
 	}
 }

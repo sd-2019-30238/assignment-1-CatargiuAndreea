@@ -172,10 +172,10 @@ public class CustomerAccess {
         //a.queryAccount();
         //a.updateCustomer(true);
         //b = a.readCustomer(4);
-        ArrayList<Customer>aaa=a.queryRegister("carla");
+        ArrayList<Customer>anana=a.queryRegister("carla");
 
 
-        System.out.println(aaa.size());
+        System.out.println(anana.size());
 
     }
 }
