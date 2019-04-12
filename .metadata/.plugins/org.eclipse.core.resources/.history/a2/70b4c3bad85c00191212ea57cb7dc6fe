@@ -91,8 +91,15 @@ public class BorrowedBooksAccess {
     public static void main(String[] args) {
         BorrowedBooksAccess b = new BorrowedBooksAccess();
         b.addBBook(7,"    mama",3,"Chasing Mavericks");
+        //b.addBBook(8,"ariadna",4,"I am here");
+        //b.updateBook(2,1);
+        //ArrayList<String> s = b.getBooksByUser("aa");
+        /*for(String ss:s){
+            System.out.println(ss);
+        }*/
 
         BorrowedBooksAccess borrowedBooksAccess = new BorrowedBooksAccess();
+        //borrowedBooksAccess.deleteByBookId(4);
 
     }
 
