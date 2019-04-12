@@ -39,7 +39,6 @@ public class GUILogInCustomer {
 	private JButton ok;
 	private Model.Customer customer;
 
-
 	//String[] filterString = {"title", "author", "genre", "release date"};
 	//@SuppressWarnings({ "unchecked", "rawtypes" })
 	//JComboBox filterChoice = new JComboBox(filterString);
@@ -47,6 +46,7 @@ public class GUILogInCustomer {
 	
 	public GUILogInCustomer(){
 		frame = new JFrame("USER");
+		
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800,800);
@@ -79,12 +79,11 @@ public class GUILogInCustomer {
 		
 		borrow.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				BorrowedBooksAccess b = new BorrowedBooksAccess();
-				//int id = customer.getId();
-				 ArrayList<String> s = b.getBooksByUser(6);
-				 for(String ss:s){
-			            System.out.println(ss);
-			}}
+				int id = customer.getId();
+				public ArrayList<String> getBook = new ArrayList<>();
+				getBook.getBooksByUser(id);
+				// public ArrayList<String> getBooksByUser(int id)
+			}
 		});
 		
 		ok.addActionListener(new ActionListener(){

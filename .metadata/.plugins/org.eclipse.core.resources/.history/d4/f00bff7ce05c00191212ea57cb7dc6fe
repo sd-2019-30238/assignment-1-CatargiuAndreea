@@ -245,6 +245,7 @@ public class BookAccess {
             session.beginTransaction();
             @SuppressWarnings("unchecked")
 			ArrayList<Book>books = (ArrayList<Book>) session.createQuery("from Book s where s.borrowed > 3").list();
+            // displayBooks(books);
             session.getTransaction().commit();
 
             return books;

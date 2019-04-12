@@ -39,7 +39,6 @@ public class GUILogInCustomer {
 	private JButton ok;
 	private Model.Customer customer;
 
-
 	//String[] filterString = {"title", "author", "genre", "release date"};
 	//@SuppressWarnings({ "unchecked", "rawtypes" })
 	//JComboBox filterChoice = new JComboBox(filterString);
@@ -47,6 +46,7 @@ public class GUILogInCustomer {
 	
 	public GUILogInCustomer(){
 		frame = new JFrame("USER");
+		
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800,800);

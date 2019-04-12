@@ -80,8 +80,8 @@ public class GUILogInCustomer {
 		borrow.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				BorrowedBooksAccess b = new BorrowedBooksAccess();
-				//int id = customer.getId();
-				 ArrayList<String> s = b.getBooksByUser(6);
+				int id = customer.getId();
+				 ArrayList<String> s = b.getBooksByUser(id);
 				 for(String ss:s){
 			            System.out.println(ss);
 			}}

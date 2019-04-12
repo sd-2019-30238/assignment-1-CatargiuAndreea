@@ -35,7 +35,7 @@ public class GUI {
 	staffButton.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 	       //@SuppressWarnings("unused")
-		GUILogInStaff enterStaff = new GUILogInStaff();
+		GUIStaff enterStaff = new GUIStaff();
 	    }
 	});
 	

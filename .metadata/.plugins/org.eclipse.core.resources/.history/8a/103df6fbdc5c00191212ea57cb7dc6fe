@@ -94,7 +94,7 @@ public class StaffAccess {
           session.beginTransaction();
 
           @SuppressWarnings("unchecked")
-		ArrayList<Staff> customer = (ArrayList<Staff>) session.createQuery("from Staff").list();
+		ArrayList<Staff> customer = (ArrayList<Staff>) session.createQuery("from Customer").list();
 
           displayAccounts(customer);
 
@@ -117,7 +117,7 @@ public class StaffAccess {
 
           session.beginTransaction();
 
-          String s = "from Staff s where s.name="+"'"+name+"' and s.password= '"+password+"'";
+          String s = "from Customer s where s.name="+"'"+name+"' and s.password= '"+password+"'";
 
           @SuppressWarnings("unchecked")
 			ArrayList<Staff> customers = (ArrayList<Staff>) session.createQuery(s).list();
@@ -143,7 +143,7 @@ public class StaffAccess {
 
           session.beginTransaction();
 
-          String s = "from Staff s where s.username="+"'"+username+"'";
+          String s = "from Account s where s.username="+"'"+username+"'";
 
           @SuppressWarnings("unchecked")
 			ArrayList<Staff> customers = (ArrayList<Staff>) session.createQuery(s).list();

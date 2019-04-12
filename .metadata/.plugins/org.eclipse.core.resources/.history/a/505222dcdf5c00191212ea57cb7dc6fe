@@ -90,7 +90,7 @@ public class BorrowedBooksAccess {
 
     public static void main(String[] args) {
         BorrowedBooksAccess b = new BorrowedBooksAccess();
-       b.addBBook(8,"ariadna",6,"Hannibal2");
+       b.addBBook(6,"maria",1,"12 rules of life");
         
         BorrowedBooksAccess borrowedBooksAccess = new BorrowedBooksAccess();
 
